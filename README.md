@@ -9,8 +9,9 @@
 
 > If WASM+WASI existed in 2008, we wouldn't have needed to created Docker. That's how important it is. Webassembly on the server is the future of computing. A standardized system interface was the missing link. Let's hope WASI is up to the task! 
 
-> "2008년에 WASM와 WebAssembly System Interface가 있었다면, 도커를 만들 필요가 없었을 겁니다..." @도커 공동 창립자 Solomon Hykes
+_"2008년에 WASM와 WebAssembly System Interface가 있었다면, 도커를 만들 필요가 없었을 겁니다..." @도커 공동 창립자 Solomon Hykes_
 
+또, 사람들은 웹어셈블리를 이렇게 이야기 하기도 합니다.
 * "자바스크립트의 킬러" [...the JavaScript Killer](https://www.slideshare.net/bmihaylov/is-webassembly-the-killer-of-javascript)
 * "웹을 위한 새로운 프로그래밍 언어" [...new programming language for the web](https://www.tutorialspoint.com/webassembly/index.htm)
 * "클라우드 컴퓨팅의 새로운 물결" [...the next wave of cloud compute](https://www.fermyon.com/blog/2022-02-08-hello-world)
@@ -67,7 +68,7 @@
 
 크롬 웹브라우저에서 서버없이 웹어셈블리 파일로 데이터베이스를 올리고, 게임을 실행시키는 등등의 사례 들이 있는 것 같습니다. 개인적으로 처음에는 이런 것을이 왜 필요한지, 이런 것들이 어떤 의미가 있는지 회의적이었습니다.(그래서 뭐? 정도의 느낌) 하지만 글을 정리하면서 웹어셈블리가 핫해지는 이유를 아래로 이해하게 됐습니다. 
 
-:pushpin: 웹어셈블리가 클라우드에서 핫한 이유를 :heavy_check_mark:   
+:pushpin: 웹어셈블리가 클라우드에서 핫한 이유를
 * 웹브라우저에서 .wasm 파일 만으로 무언가를 빠르게 할 수 있기 때문이 아니라(태생도 이랬고, 신기하기도하지만)
 * 웹브라우저와 .wasm 파일만 있으면 실행되는 이 웹어셈블리 환경을
 * (웹어셈블리와 클라우드 컴퓨팅의 요구사항이 같으니)
@@ -78,18 +79,19 @@
 ## :tada: 그래서 요즘은 어떤일이 일어나고 있을까요
 가상머신, 컨테이너, 그리고 그 이후 기술로 떠오르고 있는 웹어셈블리에 대한 주도권? 기술선도?를 위해 여러 일들이 벌어지고 있는 것 같습니다. 
 
-Introducing the Docker+Wasm Technical Preview, Oct 2022
-* 컨테이너를 대중화했던 도커가 WASM도 제공하기 시작했습니다.
-* https://www.docker.com/blog/docker-wasm-technical-preview/
-AKS support for WebAssembly System Interface (WASI) workloads, Oct 2021
-* Microsoft Azure AKS 에서 krustlet(rust 기반의 kubelet)으로 WASM을 제공하기 시작했습니다. 
-* https://azure.microsoft.com/ko-kr/updates/public-preview-aks-support-for-webassembly-system-interface-wasi-workloads/
-Fermyon launched its microservice-oriented platform for WebAssembly apps, called Fermyon Cloud, Nov 2022
-* Fermyon 에서 오픈소스 Spin 기반의 웹어셈블리 플랫폼을 출시했습니다.
-* https://www.infoq.com/news/2022/11/Fermyon-cloud-webassembly/
-CNCF에서 호스팅하는 WASM 프로젝트 들이 생겨났습니다. 
-* https://www.cncf.io/blog/2021/08/05/cloud-native-webassembly/
-또 더 있을 것 같은데.. 일단.
+* Introducing the Docker+Wasm Technical Preview, Oct 2022
+  * 컨테이너를 대중화했던 도커가 WASM도 제공하기 시작했습니다.
+  * https://www.docker.com/blog/docker-wasm-technical-preview/
+* AKS support for WebAssembly System Interface (WASI) workloads, Oct 2021
+  * Microsoft Azure AKS 에서 krustlet(rust 기반의 kubelet)으로 WASM을 제공하기 시작했습니다. 
+  * https://azure.microsoft.com/ko-kr/updates/public-preview-aks-support-for-webassembly-system-interface-wasi-workloads/
+* Fermyon launched its microservice-oriented platform for WebAssembly apps, called Fermyon Cloud, Nov 2022
+  * Fermyon 에서 오픈소스 Spin 기반의 웹어셈블리 플랫폼을 출시했습니다.
+  * https://www.infoq.com/news/2022/11/Fermyon-cloud-webassembly/
+* CNCF에서 호스팅하는 WASM 프로젝트 들이 생겨났습니다. 
+  * 쿠브콘에서 와섬데이가 언제부턴가 함께했고 CNCF 랜드스케이프에 WASM 이 들어가 있습니다.
+  * https://www.cncf.io/blog/2021/08/05/cloud-native-webassembly/
+* 또 더 있을 것 같은데.. 일단.
 
 ## :pray:마치며
 웹어셈블리는 "프로그램 실행을 위한 표준화된 바이트코드 형식"으로 웹 만을 위해 시작 되었지만, 최근에는 그 요구사항들이 클라우드 컴퓨팅 자원 제공의 요구사항과 공통점이 많기 때문에 재 조명되고 있는 것 같습니다. 우리가 수 년전 도커와 쿠버네티스를 만났고 컨테이너와 쿠버네티스가 아직은 대세인 요즘이지만 여전히 가상머신은 자기 자리가 있고 계속 사용되고 있는걸 보면. 웹어셈블리가 대세가 되어도 완전한 대체가 아닌 또 하나의 선택지 정도가 될 듯 합니다. (뭐 또 이러다가 그냥 시들해 질 수도 있겠지만) 새로운 기술 트랜트를 잘 지켜보는 것은 중요하다고 생각합니다.(계속 따라가다 보면 언젠가 또 하나 걸리겠죠(함박 미소)) 웹어셈블리. 사실 더 깊이 있는 내용이 많겠지만 일단은 과연 뭐하는 물건인지, 왜 핫 한지 정도를 함께 알면 좋을 것 같아 얕은 지식으로 공유드려 봅니다. 고맙습니다. 
