@@ -12,14 +12,14 @@
 _"2008년에 WASM와 WebAssembly System Interface가 있었다면, 도커를 만들 필요가 없었을 겁니다..." @도커 공동 창립자 Solomon Hykes_
 
 또, 사람들은 웹어셈블리를 이렇게 이야기 하기도 합니다.
-* "자바스크립트의 킬러" [...the JavaScript Killer](https://www.slideshare.net/bmihaylov/is-webassembly-the-killer-of-javascript)
-* "웹을 위한 새로운 프로그래밍 언어" [...new programming language for the web](https://www.tutorialspoint.com/webassembly/index.htm)
-* "클라우드 컴퓨팅의 새로운 물결" [...the next wave of cloud compute](https://www.fermyon.com/blog/2022-02-08-hello-world)
-* "더 나은 e버클리패킷필터" [...a better eBPF](https://marcusparadies.github.io/files/ebpf_vs_wasm_report.pdf)
-* "리스크 파이브의 대안" [...alternative to RISC V](https://medium.com/@losfair/a-comparison-between-webassembly-and-risc-v-e8fb9d37e6cc)
-* "자바의 경쟁 상대 [...a competitor to Java](https://steveklabnik.com/writing/is-webassembly-the-return-of-java-applets-flash)
-* "브라우저의 성능 부스터" [...a performance booster for browsers](https://www.opensourceforu.com/2018/04/webassembly-to-speed-up-performance-of-web-browsers/)
-* "도커의 대체" [...a replacement for Docker](https://kubesphere.io/blogs/will-cloud-native-webassembly-replace-docker_/)
+* ["자바스크립트의 킬러"](https://www.slideshare.net/bmihaylov/is-webassembly-the-killer-of-javascript)
+* ["웹을 위한 새로운 프로그래밍 언어"](https://www.tutorialspoint.com/webassembly/index.htm)
+* ["클라우드 컴퓨팅의 새로운 물결"](https://www.fermyon.com/blog/2022-02-08-hello-world)
+* ["더 나은 e버클리패킷필터"](https://marcusparadies.github.io/files/ebpf_vs_wasm_report.pdf)
+* ["리스크 파이브의 대안"](https://medium.com/@losfair/a-comparison-between-webassembly-and-risc-v-e8fb9d37e6cc)
+* ["자바의 경쟁 상대a](https://steveklabnik.com/writing/is-webassembly-the-return-of-java-applets-flash)
+* ["브라우저의 성능 부스터"](https://www.opensourceforu.com/2018/04/webassembly-to-speed-up-performance-of-web-browsers/)
+* ["도커의 대체"](https://kubesphere.io/blogs/will-cloud-native-webassembly-replace-docker_/)
 * 라고들 하지만 하지만 과연 맞는 말일까? 판단이 어렵습니다.
 
 사실 저는 웹어셈블리 조차도 낯설기 때문에 웹어셈블리가 무엇인지 부터 알아야 했습니다.:sleeping: 자 그럼 웹어셈블리 먼저 알아 볼까요?(다 아시는 분들은 패쓰:blush:)
@@ -86,18 +86,14 @@ _"2008년에 WASM와 WebAssembly System Interface가 있었다면, 도커를 만
 ## :tada: 그래서 요즘은 어떤일이 일어나고 있을까요
 가상머신, 컨테이너, 그리고 그 이후 기술로 떠오르고 있는 웹어셈블리에 대한 주도권? 기술선도?를 위해 여러 일들이 벌어지고 있는 것 같습니다. 
 
-* Introducing the Docker+Wasm Technical Preview, Oct 2022
+* [Introducing the Docker+Wasm Technical Preview](https://www.docker.com/blog/docker-wasm-technical-preview/), Oct 2022
   * 컨테이너를 대중화했던 도커가 WASM도 제공하기 시작했습니다.
-  * https://www.docker.com/blog/docker-wasm-technical-preview/
-* AKS support for WebAssembly System Interface (WASI) workloads, Oct 2021
+* [AKS support for WebAssembly System Interface (WASI) workloads](https://azure.microsoft.com/ko-kr/updates/public-preview-aks-support-for-webassembly-system-interface-wasi-workloads/), Oct 2021
   * Microsoft Azure AKS 에서 krustlet(rust 기반의 kubelet)으로 WASM을 제공하기 시작했습니다. 
-  * https://azure.microsoft.com/ko-kr/updates/public-preview-aks-support-for-webassembly-system-interface-wasi-workloads/
-* Fermyon launched its microservice-oriented platform for WebAssembly apps, called Fermyon Cloud, Nov 2022
+* [Fermyon launched its microservice-oriented platform for WebAssembly apps, called Fermyon Cloud](https://www.infoq.com/news/2022/11/Fermyon-cloud-webassembly/), Nov 2022
   * Fermyon 에서 오픈소스 Spin 기반의 웹어셈블리 플랫폼을 출시했습니다.
-  * https://www.infoq.com/news/2022/11/Fermyon-cloud-webassembly/
-* CNCF에서 호스팅하는 WASM 프로젝트 들이 생겨났습니다. 
+* [CNCF에서 호스팅하는 WASM 프로젝트 들이 생겨났습니다.](https://www.cncf.io/blog/2021/08/05/cloud-native-webassembly/) 
   * 쿠브콘에서 와섬데이가 언제부턴가 함께했고 CNCF 랜드스케이프에 WASM 이 들어가 있습니다.
-  * https://www.cncf.io/blog/2021/08/05/cloud-native-webassembly/
 * 또 더 있을 것 같은데.. 일단.
 
 ## :pray:마치며
