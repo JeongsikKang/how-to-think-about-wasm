@@ -1,3 +1,5 @@
+<img width="702" height="706" alt="image" src="https://github.com/user-attachments/assets/76b4d171-a71e-40d5-8700-421ad0b5a0a3" />
+
 # How to think about WASM ?
 * [How to think about wasm](https://www.fermyon.com/blog/how-to-think-about-wasm) 글을 옮겨놓은 내용이며, 중간 중간 개인적인 의견이 포함되어있습니다.
 * 웹어셈블리에 대한 깊이 있는 내용을 다루지는 않았고, 나온지 한참된 웹어셈블리가 요즘 왜 뜨거운지 생각해 본 내용입니다.
@@ -8,6 +10,8 @@
 2017년, 지금으로부터 5년전 등장한 웹어셈블리(WebAssembly, [WASM](https://en.wikipedia.org/wiki/WebAssembly))이 요즘에는 웹을 넘어, 컨테이너 다음의 클라우드 차세대 기술로 많이 이야기되고 있는 듯 합니다.(아직은 과장이 많이 있는 것 같지만 아무튼) 아래와 같이 웹어셈블리를 이야기하는 사람들이 있고, 그 중 가장 잘 알려진 이야기중 하나가 도커의 공동 창립자인 Solomon Hykes가 2019년에 아래 트윗을하면서 사람들의 관심을 더 불러 일으킨 것 같습니다.
 
 > If WASM+WASI existed in 2008, we wouldn't have needed to created Docker. That's how important it is. Webassembly on the server is the future of computing. A standardized system interface was the missing link. Let's hope WASI is up to the task! 
+<img width="1028" height="411" alt="image" src="https://github.com/user-attachments/assets/8e5b708f-8a0a-41e1-8316-3e3116be8973" />
+
 
 _"2008년에 WASM와 WebAssembly System Interface가 있었다면, 도커를 만들 필요가 없었을 겁니다..." @도커 공동 창립자 Solomon Hykes_
 
@@ -39,10 +43,13 @@ _"2008년에 WASM와 WebAssembly System Interface가 있었다면, 도커를 만
   * Java 처럼 컴파일된 바이너리가 실행되기 위해 특수한 환경이 필요한 형태로 이야기 할 수 있겠습니다.
   * 즉, 웹어셈블리는 '웹어셈블리 런타임이라는 특수한 환경에서 실행되는 바이트코드 형식의 프로그램' 이라고...
   * (그래도 좀 어려운데.. 전 "웹어셈블리 런타임을 우리가 쓰는 웹브라우저로, 운영체제나 아키텍처에 상관 없이 웹브라우저만 있으면 실행가능한 바이너리? 표준바이트코드?" 정도로 웹어셈블리를 이해했습니다.)
+<img width="1660" height="1269" alt="image" src="https://github.com/user-attachments/assets/36d881be-e215-4a7a-bb3e-22927943af24" />
 
 그럼, 이 웹어셈블리는 어떻게 시작되었을까요? 
 
 ## :sunny: 원래 시작은 웹이었고 요즘이야기는 아니었습니다.
+<img width="1335" height="1252" alt="image" src="https://github.com/user-attachments/assets/9fc05c68-3c24-4bc7-b973-a4a4afac05de" />
+
 웹어셈블리를 '웹어셈블리 런타임에서 실행 가능한 바이트코드 형식'으로 이해했는데, 그럼 '웹어셈블리 런타임' 이라는 것은 어떤 것을 의미할까요? 우리가 사용하는 크롬이나 사파리 같은 웹브라우저로 보면 되겠습니다.  '웹'어셈블리의 시작은 원래 웹에 관한 것이었고, 웹브라우저에서 많이 사용하는 JavaScript 말고도 컴파일된 바이너리도 실행할 수 있게 하는 것이 웹어셈블리의 시작이었습니다.(브라우저에 .wasm 바이너리가 실행될 수 있는 환경 집어넣기) 당연한 이야기 이겠지만 웹 성능 향상이 이유였을 것 같습니다. 아무래도 스크립트 언어보다는 바이너리가 빠를 테니까요. (← 여기서 일부 사람들이 웹어셈블리를 자바스크립트의 킬러라고 말하는 이유를 조금 이해할 수 있습니다. 많이 과장된 표현이지만요)
 
 웹어셈블리 런타임으로 사용하는 브라우저의 특성은 아래와 같습니다.(갑자기 브라우저의 특성을 말씀 드리는 이유는 웹어셈블리가 웹을 넘어 클라우드로 이야기 되는 공통점이 있기 때문입니다. 이부분은 뒤에 말씀드리기로 하고) 브라우저의 특성은
@@ -59,6 +66,8 @@ _"2008년에 WASM와 WebAssembly System Interface가 있었다면, 도커를 만
   * 브라우저에서 바이너리를 실행하는 것만으로 충분하지 않고, 바이너리와 기존 HTML, CSS와의 내부 호환성도 중요합니다.
 
 ## :cloud: 웹어셈블리, 더이상 웹 만의 것은 아닙니다. 웹을 넘어 클라우드로
+<img width="2195" height="1238" alt="image" src="https://github.com/user-attachments/assets/83a447dc-43e9-4d59-944d-e4fe52a05709" />
+
 아마존이 자체 데이터센터 서버들로 클라우드 컴퓨팅 장사를 시작한 배경은 다들 알고 계실테니 생략하고, 컴퓨팅 파워를 임대하는 일은 상당히 복잡하고 까다로운 요구사항이 있습니다. (더 많겠지만 아래 정도?)
 
 * 강력한 보안
